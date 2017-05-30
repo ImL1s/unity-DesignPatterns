@@ -19,7 +19,7 @@ using UnityEngine.SceneManagement;
 
 namespace YSFramework
 {
-    public class SceneStateController
+    public class SceneStateController : YSObject
     {
         ISceneState sceneState;
         AsyncOperation loadSceneOperation;

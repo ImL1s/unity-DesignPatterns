@@ -38,7 +38,7 @@ namespace YSFramework
 
         public override void StateEnd()
         {
-            PBaseDefenseGame.Instance.Initinal();
+            PBaseDefenseGame.Instance.Release();
         }
 
 

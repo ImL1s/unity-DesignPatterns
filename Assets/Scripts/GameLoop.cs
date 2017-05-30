@@ -15,7 +15,6 @@
 
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace YSFramework
 {
@@ -69,7 +68,8 @@ namespace YSFramework
 
         protected void Log(string msg)
         {
-            Debug.Log(string.Format("[{0}] {1}", GetType().Name, msg));
+            LogUtil.D(msg, this);
+            //Debug.Log(string.Format("[{0}] {1}", GetType().Name, msg));
         }
     }
 }
