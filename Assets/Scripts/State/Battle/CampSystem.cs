@@ -2,26 +2,37 @@
 
 namespace YSFramework
 {
-    internal class CampSystem : YSObject, ISubSystem
+    internal class CampSystem : BaseSubGameSystem
     {
         private IPBaseDefenseGame pBaseDefenseGame;
 
-        public CampSystem(IPBaseDefenseGame pBaseDefenseGame)
+		public CampSystem(IPBaseDefenseGame pBaseDefenseGame):base(pBaseDefenseGame)
         {
             this.pBaseDefenseGame = pBaseDefenseGame;
         }
 
-        public static ISubSystem Create(IPBaseDefenseGame pBaseDefenseGame)
+        public static ISubGameSystem Create(IPBaseDefenseGame pBaseDefenseGame)
         {
             return new CampSystem(pBaseDefenseGame);
         }
 
-        public void Release()
-        {
-        }
+//		public CampSystem(IPBaseDefenseGame pBaseDefenseGame):base(pBaseDefenseGame)
+//		{
+//		}
 
-        public void Update()
-        {
-        }
+		public override void Initialize()
+		{
+
+		}
+
+		public override void Release()
+		{
+
+		}
+
+		public override void Update()
+		{
+
+		}
     }
 }

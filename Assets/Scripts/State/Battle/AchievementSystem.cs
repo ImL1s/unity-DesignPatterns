@@ -2,29 +2,38 @@
 
 namespace YSFramework
 {
-    internal class AchievementSystem : YSObject, ISubSystem
+	internal class AchievementSystem : BaseSubGameSystem
     {
         private IPBaseDefenseGame pBaseDefenseGame;
 
-        public AchievementSystem(IPBaseDefenseGame pBaseDefenseGame)
+		public AchievementSystem(IPBaseDefenseGame pBaseDefenseGame):base(pBaseDefenseGame)
         {
             LogD("new AchievementSystem()");
             this.pBaseDefenseGame = pBaseDefenseGame;
         }
 
-        public static ISubSystem Create(IPBaseDefenseGame pBaseDefenseGame)
+        public static ISubGameSystem Create(IPBaseDefenseGame pBaseDefenseGame)
         {
             return new AchievementSystem(pBaseDefenseGame);
         }
 
-        public void Release()
-        {
-            LogD("release");
-        }
+//		public AchievementSystem(IPBaseDefenseGame pBaseDefenseGame):base(pBaseDefenseGame)
+//		{
+//		}
 
-        public void Update()
-        {
-            
-        }
+		public override void Initialize()
+		{
+
+		}
+
+		public override void Release()
+		{
+
+		}
+
+		public override void Update()
+		{
+
+		}
     }
 }

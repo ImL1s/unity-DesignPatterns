@@ -12,10 +12,13 @@
  * 描述：
  * 
  */
+using UnityEngine;
 
 
 namespace YSFramework
 {
+	public delegate void EventCallBack(System.Object para);
+
     public class PBaseDefenseGame : YSObject, IPBaseDefenseGame
     {
         private static PBaseDefenseGame instance = null;
@@ -26,6 +29,10 @@ namespace YSFramework
         private GameEventSystem gameEventSystem;
         private CharacterSystem characterSystem;
         private AchievementSystem achievementSystem;
+
+		private CampInfoUI campInfoUI;
+		private SolidierInfoUI solidierInfoUI;
+
         private bool isGameOver;
 
         public static PBaseDefenseGame Instance
@@ -50,10 +57,14 @@ namespace YSFramework
             gameEventSystem = new GameEventSystem(this);
             characterSystem = new CharacterSystem(this);
             achievementSystem = new AchievementSystem(this);
+
+			campInfoUI = new CampInfoUI (this);
+			solidierInfoUI = new SolidierInfoUI (this);
         }
 
         internal void Update()
         {
+			InputProcess ();
             apSystem.Update();
             campSystem.Update();
             stageSystem.Update();
@@ -71,6 +82,13 @@ namespace YSFramework
             characterSystem.Release();
             achievementSystem.Release();
         }
+
+		void InputProcess ()
+		{
+			if (!Input.GetMouseButtonUp (0)) {
+				return;
+			}
+		}
 
         public bool GameIsOver()
         {
@@ -95,6 +113,28 @@ namespace YSFramework
             return characterSystem.GetUnitCount(eEnemy);
         }
 
+		public void ShowCampInfo(ICamp camp)
+		{
+			campInfoUI.ShowInfo (camp);
+			solidierInfoUI.Hide ();
+		}
+
+		public void RegisterGameEvent(EGameEvent gameEvent,IGameEventObserver callback)
+		{
+			
+		}
+
+		public void RegisterGameEvent(EGameEvent gameEvent,EventCallBack callback)
+		{
+
+		}
+
+		public void NotifyGameEvent(EGameEvent gameEvent, System.Object para)
+		{
+
+		}
+			
+
         public enum ESolidier
         {
             One, Two
@@ -104,5 +144,10 @@ namespace YSFramework
         {
             One, Two
         }
+
+		public enum EGameEvent
+		{
+			Test
+		}
     }
 }

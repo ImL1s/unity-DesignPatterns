@@ -2,26 +2,37 @@
 
 namespace YSFramework
 {
-    internal class GameEventSystem : YSObject, ISubSystem
+	internal class GameEventSystem : BaseSubGameSystem
     {
         private IPBaseDefenseGame pBaseDefenseGame;
 
-        public GameEventSystem(IPBaseDefenseGame pBaseDefenseGame)
+		public GameEventSystem(IPBaseDefenseGame pBaseDefenseGame):base(pBaseDefenseGame)
         {
             this.pBaseDefenseGame = pBaseDefenseGame;
         }
 
-        public static ISubSystem Create(IPBaseDefenseGame pBaseDefenseGame)
+        public static ISubGameSystem Create(IPBaseDefenseGame pBaseDefenseGame)
         {
             return new GameEventSystem(pBaseDefenseGame);
         }
 
-        public void Release()
-        {
-        }
+//		public GameEventSystem(IPBaseDefenseGame pBaseDefenseGame):base(pBaseDefenseGame)
+//		{
+//		}
 
-        public void Update()
-        {
-        }
+		public override void Initialize()
+		{
+
+		}
+
+		public override void Release()
+		{
+
+		}
+
+		public override void Update()
+		{
+
+		}
     }
 }

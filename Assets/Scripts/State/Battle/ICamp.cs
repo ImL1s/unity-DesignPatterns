@@ -1,26 +1,26 @@
-﻿/*
+/*
  * Copyright (c) 2017  All Rights Reserved.
  *
  * CLR版本： 4.0.30319.42000
  * 機器名稱：DESKTOP-IML1S
- * 文件名：  ISubSystem
+ * 文件名：  PBaseDefenseGame
  * 版本號：  V1.0.0.0
- * 唯一標識：44c25fbc-dd73-405c-9a1a-b45b50d5d2cb
+ * 唯一標識：e831b181-1665-469e-80d0-b4971fe720bb
  * 創建人：  ImL1s
  * 電子郵箱：aa22396584@gmail.com
- * 創建時間：2017/5/30 下午 07:58:45
+ * 創建時間：2017/5/29 下午 11:20:48
  * 描述：
  * 
  */
+using UnityEngine;
 
 
 namespace YSFramework
 {
-    public interface ISubSystem
-    {
+	public interface ICamp
+	{
+		
+	}
 
-        void Update();
 
-        void Release();
-    }
 }
