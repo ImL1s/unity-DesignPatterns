@@ -4,7 +4,7 @@ namespace YSFramework
 {
 	public class BaseUserInterface : IUserInterface
 	{
-		IPBaseDefenseGame mediator;
+		protected IPBaseDefenseGame mediator;
 		private bool isVisble;
 
 		public BaseUserInterface (IPBaseDefenseGame pBaseDefenseGame)

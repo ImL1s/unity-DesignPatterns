@@ -5,5 +5,9 @@
         void Initinal();
 
         void Release();
+
+		void ChangeToMainMenu ();
+
+		void GamePause ();
     }
 }

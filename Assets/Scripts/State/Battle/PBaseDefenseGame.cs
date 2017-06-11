@@ -19,7 +19,7 @@ namespace YSFramework
 {
 	public delegate void EventCallBack(System.Object para);
 
-    public class PBaseDefenseGame : YSObject, IPBaseDefenseGame
+	public class PBaseDefenseGame : YSObject, IPBaseDefenseGame
     {
         private static PBaseDefenseGame instance = null;
 
@@ -32,6 +32,7 @@ namespace YSFramework
 
 		private CampInfoUI campInfoUI;
 		private SolidierInfoUI solidierInfoUI;
+		private GameStateInfoUI gameStateInfoUI;
 
         private bool isGameOver;
 
@@ -133,7 +134,17 @@ namespace YSFramework
 		{
 
 		}
+
+		public void ChangeToMainMenu ()
+		{
 			
+		}	
+		public void GamePause ()
+		{
+			
+		}
+
+		
 
         public enum ESolidier
         {
